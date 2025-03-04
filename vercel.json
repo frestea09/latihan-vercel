@@ -18,6 +18,5 @@
       "build": "npm run build",
       "dev": "nest start --watch"
     }
-  },
-  "output": "dist"
+  }
 }
