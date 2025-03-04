@@ -18,9 +18,7 @@ export class SupabaseService {
   }
 
   async getUserData() {
-    const { data, error } = await this.supabase
-      .from('product') // Ganti dengan nama tabel yang sesuai di Supabase
-      .select('*');
+    const { data, error } = await this.supabase.from('product').select('*');
 
     if (error) {
       throw new Error(error.message);
