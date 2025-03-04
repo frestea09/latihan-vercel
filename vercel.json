@@ -2,14 +2,22 @@
   "version": 2,
   "builds": [
     {
-      "src": "dist/main.js",
+      "src": "package.json",
       "use": "@vercel/node"
     }
   ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "dist/main.js"
+  "env": {
+    "SUPABASE_URL": "https://kwognzchiktddkgtlpba.supabase.co",
+    "SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt3b2duemNoaWt0ZGRrZ3RscGJhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDEwMDUzODQsImV4cCI6MjA1NjU4MTM4NH0.uuLA0mq0tZ31kwG8ZZ80OZQ0S1F78g5rVxSNwGUNEqA"
+  },
+  "build": {
+    "env": {
+      "NODE_ENV": "production"
+    },
+    "commands": {
+      "build": "npm run build",
+      "dev": "nest start --watch"
     }
-  ]
+  },
+  "output": "dist"
 }
